@@ -38,12 +38,11 @@
         font-family: "Impact", "Arial Black", "sans serif";
         line-height: 1.2;
 
-        font-size: 20px;
-        font-size: [[fontSize]];
+        font-size: 36px;
 
         color: white;
         text-shadow:
-          -1px -1px 0 #000,  
+          -1px -1px 0 #000,
           1px -1px 0 #000,
           -1px 1px 0 #000,
           1px 1px 0 #000;
@@ -57,7 +56,7 @@
 
         .top-text,
         .bottom-text {
-          font-size: calc([[fontSize]] - ([[fontSize]] / 4));
+          font-size: 20px;
         }
 
       }
@@ -99,12 +98,6 @@
         bottomText: {
           type: String,
         },
-        /**
-         * Font size.
-         */
-        fontSize: {
-          type: String,
-        },
       },
       /**
        * Attached to the DOM, now fire.
@@ -112,8 +105,8 @@
       attached: function() {
         // Establish hax property binding
         let props = {
-          'canScale': false,
-          'canPosition': false,
+          'canScale': true,
+          'canPosition': true,
           'canEditSource': false,
           'gizmo': {
             'title': 'Meme',
@@ -153,7 +146,7 @@
             ],
             'configure': [
               {
-                'property': 'source',
+                'property': 'imageUrl',
                 'title': 'Source',
                 'description': 'The source url for the element this is citing.',
                 'inputMethod': 'textfield',
